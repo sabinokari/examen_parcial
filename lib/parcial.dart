@@ -51,6 +51,20 @@ class _Examen_State extends State<Examen_parcial> {
                 setState(() {});
               },
             ),
+            TextButton(
+              onPressed: () {
+                print("Button pressed");
+              },
+              child: Text("Calcular"),
+            ),
+            Text(
+              "Resultado:",
+              style: TextStyle(
+                fontSize: 14.0,
+                fontWeight:
+                    isTitleBold == true ? FontWeight.bold : FontWeight.normal,
+              ),
+            ),
           ],
         ),
       ),
