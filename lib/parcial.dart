@@ -13,6 +13,7 @@ class _Examen_State extends State<Examen_parcial> {
   double _Peso = 70;
   double _Talla = 80;
   double _resultado = 0.0;
+  String mensaje = "00";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,6 +65,7 @@ class _Examen_State extends State<Examen_parcial> {
                 child: ElevatedButton(
                     onPressed: () {
                       _resultado = _Peso / (_Talla * _Talla);
+                      if (_resultado >= 25) mensaje = "Sobre peso";
                     },
                     child: Text("Calcular:"))),
             Text(
