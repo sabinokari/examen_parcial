@@ -10,8 +10,8 @@ class Examen_parcial extends StatefulWidget {
 class _Examen_State extends State<Examen_parcial> {
   bool isTitleBold = true;
   bool isDescriptionJustify = false;
-  double valueRedSlider = 70;
-  double valueGreenSlider = 80;
+  double _sliderValue = 70;
+  double _sliderValue2 = 80;
 
   @override
   Widget build(BuildContext context) {
@@ -31,27 +31,33 @@ class _Examen_State extends State<Examen_parcial> {
                     isTitleBold == true ? FontWeight.bold : FontWeight.normal,
               ),
             ),
-            Slider(
-              thumbColor: Color(0xff0000),
-              min: 0,
-              max: 100,
-              value: valueRedSlider,
-              onChanged: (value) {
-                print(value);
-                valueRedSlider = value;
-                setState(() {});
-              },
+            Text(
+              'Peso: $_sliderValue',
+              style: TextStyle(fontSize: 20.0),
             ),
             Slider(
-              thumbColor: Color(0xff0000),
-              min: 0,
-              max: 100,
-              value: valueGreenSlider,
-              onChanged: (value) {
-                print(value);
-                valueGreenSlider = value;
-                setState(() {});
+              value: _sliderValue,
+              onChanged: (newValue) {
+                setState(() {
+                  _sliderValue = newValue;
+                });
               },
+              min: 0,
+              max: 500,
+            ),
+            Text(
+              'Talla en CM: $_sliderValue2',
+              style: TextStyle(fontSize: 20.0),
+            ),
+            Slider(
+              value: _sliderValue2,
+              onChanged: (newValue) {
+                setState(() {
+                  _sliderValue2 = newValue;
+                });
+              },
+              min: 0,
+              max: 300,
             ),
             TextButton(
                 onPressed: () {},
