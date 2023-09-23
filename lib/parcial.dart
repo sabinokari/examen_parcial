@@ -12,6 +12,7 @@ class _Examen_State extends State<Examen_parcial> {
   bool isDescriptionJustify = false;
   double _sliderValue = 70;
   double _sliderValue2 = 80;
+  double _resultado = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -63,11 +64,11 @@ class _Examen_State extends State<Examen_parcial> {
                 onPressed: () {},
                 child: ElevatedButton(
                     onPressed: () {
-                      print('Botón presionado');
+                      _resultado = _sliderValue2 * 10;
                     },
                     child: Text("Calcular:"))),
             Text(
-              "Resultado:",
+              "Resultado:  $_resultado",
               style: TextStyle(
                 fontSize: 14.0,
                 fontWeight:
