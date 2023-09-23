@@ -10,10 +10,9 @@ class Examen_parcial extends StatefulWidget {
 class _Examen_State extends State<Examen_parcial> {
   bool isTitleBold = true;
   bool isDescriptionJustify = false;
-  double _sliderValue = 70;
-  double _sliderValue2 = 80;
+  double _Peso = 70;
+  double _Talla = 80;
   double _resultado = 0.0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,28 +32,28 @@ class _Examen_State extends State<Examen_parcial> {
               ),
             ),
             Text(
-              'Peso: $_sliderValue',
+              'Peso: $_Peso',
               style: TextStyle(fontSize: 20.0),
             ),
             Slider(
-              value: _sliderValue,
+              value: _Peso,
               onChanged: (newValue) {
                 setState(() {
-                  _sliderValue = newValue;
+                  _Peso = newValue;
                 });
               },
               min: 0,
               max: 500,
             ),
             Text(
-              'Talla en CM: $_sliderValue2',
+              'Talla en CM: $_Talla',
               style: TextStyle(fontSize: 20.0),
             ),
             Slider(
-              value: _sliderValue2,
+              value: _Talla,
               onChanged: (newValue) {
                 setState(() {
-                  _sliderValue2 = newValue;
+                  _Talla = newValue;
                 });
               },
               min: 0,
@@ -64,7 +63,7 @@ class _Examen_State extends State<Examen_parcial> {
                 onPressed: () {},
                 child: ElevatedButton(
                     onPressed: () {
-                      _resultado = _sliderValue2 * 10;
+                      _resultado = _Peso / (_Talla * _Talla);
                     },
                     child: Text("Calcular:"))),
             Text(
