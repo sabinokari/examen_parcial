@@ -32,7 +32,7 @@ class _Examen_State extends State<Examen_parcial> {
               ),
             ),
             Slider(
-              thumbColor: Color.fromARGB(0, 204, 11, 11),
+              thumbColor: Color(0xff0000),
               min: 0,
               max: 100,
               value: valueRedSlider,
@@ -43,6 +43,7 @@ class _Examen_State extends State<Examen_parcial> {
               },
             ),
             Slider(
+              thumbColor: Color(0xff0000),
               min: 0,
               max: 100,
               value: valueGreenSlider,
@@ -53,11 +54,12 @@ class _Examen_State extends State<Examen_parcial> {
               },
             ),
             TextButton(
-              onPressed: () {
-                print("Button pressed");
-              },
-              child: Text("Calcular:"),
-            ),
+                onPressed: () {},
+                child: ElevatedButton(
+                    onPressed: () {
+                      print('Botón presionado');
+                    },
+                    child: Text("Calcular:"))),
             Text(
               "Resultado:",
               style: TextStyle(
